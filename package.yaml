@@ -1,0 +1,57 @@
+name:                Lenguajes2
+version:             0.1.0.0
+github:              "initial-mockingbird/Lenguajes2"
+license:             BSD-3-Clause
+author:              "Daniel Pinto"
+maintainer:          "15-11139@usb.ve"
+copyright:           "2024 Daniel Pint"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/initial-mockingbird/Lenguajes2#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+  - containers
+  - mtl
+  - transformers
+  - parsec
+  - pretty
+  - random
+  - MissingH
+
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: 
+    - src
+
+executables:
+  Json:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+    - Lenguajes2
