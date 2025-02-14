@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       Free
+      IFT
   other-modules:
       Paths_Lenguajes2
   autogen-modules:
@@ -37,6 +38,7 @@ library
       MissingH
     , base >=4.7 && <5
     , containers
+    , lens
     , mtl
     , parsec
     , pretty
@@ -58,6 +60,7 @@ executable Json
     , MissingH
     , base >=4.7 && <5
     , containers
+    , lens
     , mtl
     , parsec
     , pretty

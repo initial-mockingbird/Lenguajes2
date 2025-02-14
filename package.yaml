@@ -28,6 +28,7 @@ dependencies:
   - pretty
   - random
   - MissingH
+  - lens
 
 
 ghc-options:

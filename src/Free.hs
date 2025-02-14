@@ -5,6 +5,10 @@
 
 module Free (parseJSON,parseJSON') where
 
+{-
+ -
+-}
+
 
 import Text.Parsec
     ( char,
@@ -52,11 +56,11 @@ digit19 = digit >>= \d -> when (d == '0') empty
 
 number :: Parser
 number  
-  = (char' '0' <|> optional (char' '-') *> digit19)
+  = ("0" <|> optional "-" *> digit19)
   *> optional digits
-  *> optional (char' '.' >> digit')
+  *> optional ("." >> digit')
   *> optional digits
-  *> optional ((char' 'E' <|> "e") *> optional (char' '-' <|> "+") *> digits)
+  *> optional (("E" <|> "e") *> optional ("-" <|> "+") *> digits)
 
 jstring :: Parser 
 jstring = between (char' '"') (char' '"') $ optional . void . many1 $ special <|> nonSpecial
@@ -73,14 +77,14 @@ jstring = between (char' '"') (char' '"') $ optional . void . many1 $ special <|
     , "n"
     , "r"
     , "t"
-    , char' 'u' *> traverse_ (const $ void hexDigit) [(1 :: Int)..4]
+    , "u" *> traverse_ (const $ void hexDigit) [(1 :: Int)..4]
     ]
 
 -------------------------------
 -- Orphans
 -------------------------------
 
-instance IsString (Parser) where
+instance (a ~ ()) => IsString (ParsecT String () Identity a) where
   fromString str 
     = void $ string str
 
@@ -91,12 +95,12 @@ instance IsString (Parser) where
 
 
 object :: Parser 
-object = between (char '{') (char '}') $ 
-  whitespace *> void ((whitespace *> jstring *> whitespace *> char ':' *> value) `sepBy` char' ',')
+object = between "{" "}" $ 
+  whitespace *> void ((whitespace *> jstring *> whitespace *> ":" *> value) `sepBy` ",")
 
 array :: Parser 
-array = between  (char '[') (char ']') $ 
-  whitespace *> void (value `sepBy` char' ',' )
+array = between "[" "]" $ 
+  whitespace *> void (value `sepBy` "," )
 
 value :: Parser 
 value = whitespace *> choice 
