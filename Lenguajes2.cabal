@@ -27,6 +27,7 @@ library
   exposed-modules:
       Free
       IFT
+      Ift
   other-modules:
       Paths_Lenguajes2
   autogen-modules:
