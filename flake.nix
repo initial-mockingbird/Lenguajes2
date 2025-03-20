@@ -23,6 +23,7 @@
               pkgs.haskell.compiler.ghc910
               (pkgs.haskell-language-server.override { supportedGhcVersions = [ "910" ]; })
               pkgs.haskellPackages.hoogle
+              pkgs.mermaid-cli
             ];
         };
       };

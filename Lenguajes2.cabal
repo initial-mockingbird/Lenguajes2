@@ -28,6 +28,8 @@ library
       Free
       IFT
       Ift
+      Tarea3
+      Unify
   other-modules:
       Paths_Lenguajes2
   autogen-modules:

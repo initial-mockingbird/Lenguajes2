@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="head" data-base-url="."><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Tarea3</title><link href="./linuwial.css" rel="stylesheet" type="text/css" title="Linuwial" /><link rel="stylesheet" type="text/css" href="./quick-jump.css" /><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" /><script src="./haddock-bundle.min.js" async="async" type="text/javascript"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { processClass: "mathjax", ignoreClass: ".*" } });</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script></head><body><div id="package-header"><span class="caption empty">&nbsp;</span><ul class="links" id="page-menu"><li><a href="src/Tarea3.html">Source</a></li><li><a href="index.html">Contents</a></li><li><a href="doc-index.html">Index</a></li></ul></div><div id="content"><div id="module-header"><table class="info"><tr><th valign="top">Copyright</th><td>(c) Daniel Pinto<br />15-11139</td></tr><tr><th>License</th><td>GPL-3</td></tr><tr><th>Maintainer</th><td>15-11139@usb.ve</td></tr><tr><th>Stability</th><td>experimental</td></tr><tr><th>Portability</th><td>POSIX</td></tr><tr><th>Safe Haskell</th><td>None</td></tr></table><p class="caption">Tarea3</p></div><div id="description"><p class="caption">Description</p><div class="doc empty">&nbsp;</div></div><div id="synopsis"><details id="syn"><summary>Synopsis</summary><ul class="details-toggle" data-details-id="syn"><li class="src short"><a href="#v:pregunta1a">pregunta1a</a> :: String</li><li class="src short"><a href="#v:pregunta2">pregunta2</a> :: String</li><li class="src short"><a href="#v:getType">getType</a> :: E -&gt; Types</li><li class="src short"><a href="#v:example">example</a> :: E</li><li class="src short"><a href="#v:pregunta3a">pregunta3a</a> :: E -&gt; Types</li><li class="src short"><a href="#v:pregunta3b">pregunta3b</a> :: [Rose (String, Types)]</li><li class="src short"><a href="#v:pregunta3d">pregunta3d</a> :: String</li></ul></details></div><div id="interface"><h1>Documentation</h1><div class="top"><p class="src"><a id="v:pregunta1a" class="def">pregunta1a</a> :: String <a href="src/Tarea3.html#pregunta1a" class="link">Source</a> <a href="#v:pregunta1a" class="selflink">#</a></p><div class="doc"><p>El grafo de tipos es el siguiente:</p><p><img src="../diagrams/1a.png" title="diagrama 1.a" /></p></div></div><div class="top"><p class="src"><a id="v:pregunta2" class="def">pregunta2</a> :: String <a href="src/Tarea3.html#pregunta2" class="link">Source</a> <a href="#v:pregunta2" class="selflink">#</a></p><div class="doc"><p>El esquema de verificacion es:</p><table><thead><tr><th>Expresion</th><th>Tipo</th><th>Substitucion</th></tr></thead><tbody><tr><td><span class="mathjax">\[cmap\]</span></td><td><span class="mathjax">\[\beta\]</span></td><td></td></tr><tr><td><span class="mathjax">\[f\]</span></td><td><span class="mathjax">\[\gamma\]</span></td><td></td></tr><tr><td><span class="mathjax">\[x\]</span></td><td><span class="mathjax">\[\rho\]</span></td><td></td></tr><tr><td><span class="mathjax">\[[]\]</span></td><td><span class="mathjax">\[\forall a.list(a)\]</span></td><td></td></tr><tr><td><span class="mathjax">\[null\]</span></td><td><span class="mathjax">\[\forall a.list(a) \rightarrow bool\]</span></td><td></td></tr><tr><td><span class="mathjax">\[head\]</span></td><td><span class="mathjax">\[\forall a. list(a) \rightarrow a\]</span></td><td></td></tr><tr><td><span class="mathjax">\[tail\]</span></td><td><span class="mathjax">\[\forall a. list(a) \rightarrow a\]</span></td><td></td></tr><tr><td><span class="mathjax">\[if\]</span></td><td><span class="mathjax">\[\forall a. bool \times a \times a \rightarrow a\]</span></td><td></td></tr><tr><td><span class="mathjax">\[concat\]</span></td><td><span class="mathjax">\[\forall a. list(a) \times list(a) \rightarrow list(a) \]</span></td><td></td></tr><tr><td><span class="mathjax">\[match\]</span></td><td><span class="mathjax">\[\forall a. a \times a \rightarrow a\]</span></td><td></td></tr><tr><td><span class="mathjax">\[cmap(f,x)\]</span></td><td><span class="mathjax">\[a_1\]</span></td><td><span class="mathjax">\[\beta = \gamma \rightarrow \rho \rightarrow a_1\]</span></td></tr><tr><td><span class="mathjax">\[head(x)\]</span></td><td><span class="mathjax">\[a_2\]</span></td><td><span class="mathjax">\[\rho = list(a_2)\]</span></td></tr><tr><td><span class="mathjax">\[tail(x)\]</span></td><td><span class="mathjax">\[list(a_2)\]</span></td><td></td></tr><tr><td><span class="mathjax">\[cmap(f,tail(x))\]</span></td><td><span class="mathjax">\[a_1\]</span></td><td></td></tr><tr><td><span class="mathjax">\[f(head(x))\]</span></td><td><span class="mathjax">\[a_3\]</span></td><td><span class="mathjax">\[\gamma = a_2 \rightarrow a_3\]</span></td></tr><tr><td><span class="mathjax">\[concat(f(head(x)),cmap(f,tail(x)))\]</span></td><td><span class="mathjax">\[list(a_4)\]</span></td><td><span class="mathjax">\[a_3 = list(a_4), a_1 = list(a_4) \]</span></td></tr><tr><td><span class="mathjax">\[null(x)\]</span></td><td><span class="mathjax">\[bool\]</span></td><td></td></tr><tr><td><span class="mathjax">\[if(null(x),[],concat(f(head(x)),cmap(f,tail(x))))\]</span></td><td><span class="mathjax">\[list(a_4)\]</span></td><td></td></tr><tr><td><span class="mathjax">\[match(cmap(f,x), if(null(x),[],concat(f(head(x)),cmap(f,tail(x)))))\]</span></td><td><span class="mathjax">\[list(a_4)\]</span></td><td></td></tr></tbody></table><p>Es decir:
+ <span class="mathjax">\[\begin{aligned}
+   \beta &amp;= \gamma \rightarrow \rho \rightarrow a_1 \\
+         &amp;= (a_2 \rightarrow a_3)\rightarrow list(a_2) \rightarrow a_1 \\ 
+         &amp;= (a_2 \rightarrow list(a_4))\rightarrow list(a_2) \rightarrow list(a_4) \\
+         &amp;= \forall a_2\ a_4. (a_2 \rightarrow list(a_4))\rightarrow list(a_2) \rightarrow list(a_4)
+   \end{aligned}
+ \]</span></p><p>El cual es el tipo mas general de <span class="mathjax">\[concatMap\]</span></p></div></div><div class="top"><p class="src"><a id="v:getType" class="def">getType</a> :: E -&gt; Types <a href="src/Tarea3.html#getType" class="link">Source</a> <a href="#v:getType" class="selflink">#</a></p></div><div class="top"><p class="src"><a id="v:example" class="def">example</a> :: E <a href="src/Tarea3.html#example" class="link">Source</a> <a href="#v:example" class="selflink">#</a></p></div><div class="top"><p class="src"><a id="v:pregunta3a" class="def">pregunta3a</a> :: E -&gt; Types <a href="src/Tarea3.html#pregunta3a" class="link">Source</a> <a href="#v:pregunta3a" class="selflink">#</a></p><div class="doc"><p>La funcion <code><a href="Tarea3.html#v:getType" title="Tarea3">getType</a></code> obtiene el tipo de una expresion usando solo atributos sintetizados. Vea el
+ - source para la implementacion.</p></div></div><div class="top"><p class="src"><a id="v:pregunta3b" class="def">pregunta3b</a> :: [Rose (String, Types)] <a href="src/Tarea3.html#pregunta3b" class="link">Source</a> <a href="#v:pregunta3b" class="selflink">#</a></p><div class="doc"><p>El tipo de la frase, y como se obtiene, se puede ver en los siguientes arboles:</p><p><img src="../diagrams/3a.svg" title="diagrama 3.b" /></p></div></div><div class="top"><p class="src"><a id="v:pregunta3d" class="def">pregunta3d</a> :: String <a href="src/Tarea3.html#pregunta3d" class="link">Source</a> <a href="#v:pregunta3d" class="selflink">#</a></p><div class="doc"><p>La pregunta 3.a planteada como regla de inferencia:</p><pre>   G |- e0 : Int  G |- e1 : Int
+   -----------------------------
+         G |- e0 + e1 : Int
+
+   G |- e0 : Bool  G |- e1 : Bool
+   -----------------------------
+        G |- e0 ^ e1 :  Bool
+
+   G |- e0 : Int  G |- e1 : Int
+   -----------------------------
+        G |- e0 &lt; e1 : Bool 
+
+     G |- e0 : T   T /= Null
+   -----------------------------
+        G |- e0 ?: e1 : T
+
+    G |- e0 : Null G |- e1 : T
+   -----------------------------
+        G |- e0 ?: e1 : T
+
+
+      G |- e0 : T   T /= Null
+   -----------------------------
+        G |- e0!! : T
+
+          G |- e0 : Null 
+   -----------------------------
+        G |- e0!! : Bottom
+
+    G |- e : T
+   -------------
+   G |- (e) : T
+
+   ---------------
+   G |- num : Int 
+
+   -----------------
+   G |- true : Bool
+
+   -----------------
+   G |- false : Bool 
+
+   -----------------
+   G |- null : Null 
+ </pre></div></div></div></div><div id="footer"><p>Produced by <a href="http://www.haskell.org/haddock/">Haddock</a> version 2.28.0</p></div></body></html>

@@ -16,4 +16,5 @@ clean:
 parse *args='./jsons/*': build 
   cabal run Json -- {{args}}
  
-
+tarea3:
+  haddock -o ./Tarea3/ --html --base-url=. ./src/Tarea3.hs --hyperlinked-source
