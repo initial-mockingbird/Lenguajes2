@@ -1,0 +1,750 @@
+<h1 id="daniel-pinto-15-11139">Daniel Pinto 15-11139</h1>
+<h2 id="pregunta-1">Pregunta 1</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span> a <span class="op">:=</span> b <span class="op">+</span> c</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> b <span class="op">:=</span> a <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> b <span class="op">:=</span> d <span class="op">-</span> c</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> a <span class="op">:=</span> a <span class="op">+</span> d</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> c <span class="op">:=</span> b <span class="op">*</span> a</span></code></pre></div>
+<p>Iteramos desde la ultima instruccion hasta la primera:</p>
+<table>
+<thead>
+<tr class="header">
+<th>i</th>
+<th>Instruccion</th>
+<th>Vivas</th>
+<th>Usos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4</td>
+<td>c := b * a</td>
+<td>b,d</td>
+<td>a = ?</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>b = ?</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>c = ?</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>d = ?</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>_</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>a := a + d</td>
+<td>a,b,d</td>
+<td>a = 4</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>b = 4</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>c = ?</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>d = ?</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>_</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>b := d - c</td>
+<td>a,b,d</td>
+<td>a = 3</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>b = 4</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>c = ?</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>d = 3</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>_</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>b := a / 2</td>
+<td>a,d,c</td>
+<td>a = 3</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>b = ?</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>c = 2</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>d = 3</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>_</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>a := b + c</td>
+<td>a,d,c</td>
+<td>a = 1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>b = ?</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>c = 2</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>d = 3</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>_</td>
+</tr>
+<tr class="even">
+<td>I</td>
+<td></td>
+<td>b,c,d</td>
+<td>a = ?</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>b = 0</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>c = 0</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>d = 3</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>_</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pregunta-2">Pregunta 2</h2>
+<h3 id="pregunta-2.a">Pregunta 2.a</h3>
+<p>De manera mas general, sea <code>ns = [n_1,n_2,...,n_m]</code> una
+lista de nodos ordenados decrecientemente por su label. Entonces
+<code>label(ns)</code> se puede calcular como:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>label (c_max<span class="op">:</span>cs)) <span class="ot">=</span> cmax <span class="op">+</span> <span class="fu">snd</span> (<span class="fu">foldl</span> f (c_max,<span class="dv">0</span>) cs)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">where</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>      f (n,adicionales) c</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>            <span class="op">|</span> n <span class="op">==</span> c    <span class="ot">=</span> (n,adicionales<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>            <span class="op">|</span> <span class="fu">otherwise</span> <span class="ot">=</span> (n<span class="op">-</span><span class="dv">1</span>,adicionales)</span></code></pre></div>
+<p>Aqui la magia lo hace el ordenamiento y el parametro <code>p</code>:
+el cual cuenta cuantos registros adicionales debemos usar para almacenar
+los resultados. Veamos un ejemplo:</p>
+<p>Supongamos que tenemos los siguientes labels:
+<code>9 : 9 9 8 8 5 5 5</code>, entonces, la manera en que iteramos
+es:</p>
+<pre><code># Necesito 9 registros, tengo 8 registros operativos ya que
+necesito 1 para almacenar la cabeza, entonces necesito de disponer de 1 registro adicional.
+Asi vuelvo a tener 8 libres
+(9,0) 9 -&gt; (9,1)
+# Ahora necesito 9 registros, tengo 8 registros libres ya que
+# necesito 1 para almacenar la cabeza, entonces necesito de disponer de 1 registro adicional.
+Asi vuelvo a tener 8 libres
+(9,1) 9 -&gt; (9,2)
+# Ahora necesito 8 registros, y tengo 8 libres! no es necesario disponer de registros adicionales
+(9,2) 8 -&gt; (8,2)
+# Ahora necesito 8 registros, y tengo 7 libres! (porque necesite almacenar el ultimo resultado),
+asi que necesito disponer de 1 registro adicional
+(8,2) 8 -&gt; (8,3)
+# Ahora necesito 5 registros, y tengo 7 libres! no es necesario disponer de registros adicionales
+(8,3) 5 -&gt; (7,3)
+# Ahora necesito 5 registros, y tengo 6 libres! no es necesario disponer de registros adicionales
+(7,3) 5 -&gt; (6,3)
+# Ahora necesito 5 registros, y tengo 5 libres! no es necesario disponer de registros adicionales
+(6,3) 5 -&gt; (5,3)</code></pre>
+<p>Finalmente, necesitamos 9 registros (para hacer la operacion mas
+costosa) + 3 registros adicionales.</p>
+<h2 id="pregunta-2.b">Pregunta 2.b</h2>
+<p>El proceso de generacion de codigo es en esencia el mismo, visitamos
+los nodos en orden decreciente de label almacenando un registro
+adicional segun el esquema descrito en la pregunta 2.a.</p>
+<h2 id="pregunta-3">Pregunta 3</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>we<span class="op">[</span>have<span class="op">]</span> <span class="op">=</span> to<span class="op">[</span>go <span class="op">[</span>deep<span class="op">]</span> <span class="op">+</span> er<span class="op">]</span></span></code></pre></div>
+<h3 id="pregunta-3.a">Pregunta 3.a</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> we<span class="op">,</span>have<span class="op">,</span>to<span class="op">,</span>go<span class="op">,</span>deep<span class="op">,</span>er # previously known vars      <span class="op">}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> WWE # WWE is a MACRO <span class="cf">for</span> the <span class="st">&quot;we&quot;</span> type width       <span class="op">}</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> WI  # WI is a MACRO <span class="cf">for</span> the width of integer type  <span class="op">}</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="op">:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="op">:</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">:</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>t1       <span class="op">:=</span> deep <span class="op">*</span> WI</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>t2       <span class="op">:=</span> go<span class="op">[</span>t1<span class="op">]</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>t3       <span class="op">:=</span> t2 <span class="op">+</span> er</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>t4       <span class="op">:=</span> t3 <span class="op">*</span> WWE</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>t5       <span class="op">:=</span> to<span class="op">[</span>t4<span class="op">]</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>we<span class="op">[</span>have<span class="op">]</span> <span class="op">:=</span> t5</span></code></pre></div>
+<p>Explicacion:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">`deep`` esta calculado, sabemos que `go[deep]` debe ser un</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">entero ya que es usado para indexar a `to`</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">asi que utilizamos el tamano de los enteros para calcular t1</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">:=</span> deep <span class="op">*</span> WI</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">ya teniendo el salto calculado, indexamos a `go`</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">:=</span> go<span class="op">[</span>t1<span class="op">]</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">ya teniendo `g[deep]` calculado, sumamos con `er`</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>t3 <span class="op">:=</span> t2 <span class="op">+</span> er</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">ahora usamos t3 para calcular el salto. Aqui NO sabemos que tipo</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">tiene `to`, asi que asumiremos que es WWE.</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>t4 <span class="op">:=</span> t3 <span class="op">*</span> WWE</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">ya teniendo el salto, indexamos a `to`</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>t5 <span class="op">:=</span> to<span class="op">[</span>t4<span class="op">]</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">finalmente, asignamos el resultado a `we[have]`</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>we<span class="op">[</span>have<span class="op">]</span> <span class="op">:=</span> t5</span></code></pre></div>
+<h2 id="pregunta-3.b">Pregunta 3.b</h2>
+<p>Inicialmente, empezamos con los siguientes descriptores:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>R1</th>
+<th>R2</th>
+<th>R3</th>
+<th>t1</th>
+<th>t2</th>
+<th>t3</th>
+<th>t4</th>
+<th>t5</th>
+<th>we</th>
+<th>have</th>
+<th>to</th>
+<th>go</th>
+<th>deep</th>
+<th>er</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>we</td>
+<td>have</td>
+<td>to</td>
+<td>go</td>
+<td>deep</td>
+<td>er</td>
+</tr>
+</tbody>
+</table>
+<p>Luego, para la instruccion: <code>t1 := deep * WI</code>:</p>
+<pre><code># Ningun registro esta lleno, asi que usamos todos los registros
+# WI es una CONSTANTE, asi que no necesitamos cargarlo en un registro
+(R1, R2) &lt;- getReg(t1 := deep * WI)</code></pre>
+<p>Y el codigo generado es:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>LD R2<span class="op">,</span> deep</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>MUL R1<span class="op">,</span> R2<span class="op">,</span> WI</span></code></pre></div>
+<p>Y actualizamos los descriptores:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>R1</th>
+<th>R2</th>
+<th>R3</th>
+<th>t1</th>
+<th>t2</th>
+<th>t3</th>
+<th>t4</th>
+<th>t5</th>
+<th>we</th>
+<th>have</th>
+<th>to</th>
+<th>go</th>
+<th>deep</th>
+<th>er</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>t1</td>
+<td>deep</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>we</td>
+<td>have</td>
+<td>to</td>
+<td>go</td>
+<td>deep</td>
+<td>er</td>
+</tr>
+</tbody>
+</table>
+<p>Para la instruccion: <code>t2 := go[t1]</code>:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#</span><span class="er"># Aun tenemos reigstros libres para `t2`, asi que usamos R3</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#</span><span class="er"># `t1` ya esta calculado en `R1`, asi que lo usamos directamente</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="op">(</span>R3<span class="op">,</span>R1<span class="op">)</span> <span class="op">&lt;-</span> getReg<span class="op">(</span>t2 <span class="op">:=</span> go <span class="op">=[]</span> t1<span class="op">)</span></span></code></pre></div>
+<p>Emitimos el codigo:</p>
+<pre><code>LD R3, go(R1)</code></pre>
+<p>Y actualizamos los descriptores:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>R1</th>
+<th>R2</th>
+<th>R3</th>
+<th>t1</th>
+<th>t2</th>
+<th>t3</th>
+<th>t4</th>
+<th>t5</th>
+<th>we</th>
+<th>have</th>
+<th>to</th>
+<th>go</th>
+<th>deep</th>
+<th>er</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>t1</td>
+<td>deep</td>
+<td>t2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>we</td>
+<td>have</td>
+<td>to</td>
+<td>go</td>
+<td>deep</td>
+<td>er</td>
+</tr>
+</tbody>
+</table>
+<p>Para la instruccion: <code>t3 := t2 + er</code>:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">t2 se reutiliza, esta en R3</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">No mas descriptores libres para t3 y er!</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">Tenemos que liberar 2 registros</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">Podemos liberar R2 ya que esta en memoria</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">En circunstancias normales NO podemos liberar R1 ya que es usado por t1 y t1 no esta en memoria</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">Tenemos que generar codigo que preserve t1</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">Sin embargo, t1 no tiene usos futuros, asi que podemos liberar R1 sin preservarlo</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="op">(</span>R1<span class="op">,</span>R3<span class="op">,</span>R2<span class="op">)</span> <span class="op">&lt;-</span> getReg<span class="op">(</span>t3 <span class="op">:=</span> t2 <span class="op">+</span> er<span class="op">)</span></span></code></pre></div>
+<p>Emitimos el codigo:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>LD R2<span class="op">,</span> er</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ADD R1<span class="op">,</span> R3<span class="op">,</span> R2</span></code></pre></div>
+<p>Y actualizamos los descriptores:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>R1</th>
+<th>R2</th>
+<th>R3</th>
+<th>t1</th>
+<th>t2</th>
+<th>t3</th>
+<th>t4</th>
+<th>t5</th>
+<th>we</th>
+<th>have</th>
+<th>to</th>
+<th>go</th>
+<th>deep</th>
+<th>er</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>t3</td>
+<td>er</td>
+<td>t2</td>
+<td>t1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>we</td>
+<td>have</td>
+<td>to</td>
+<td>go</td>
+<td>deep</td>
+<td>er</td>
+</tr>
+</tbody>
+</table>
+<p>Para la instruccion: <code>t4 := t3 * WWE</code>:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">t3 esta en R1, asi que lo reutilizamos</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">WWE es una constante, asi que no necesitamos cargarla en un registro</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">t3 no tiene usos futuros, asi que podemos reutilizar R1</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="op">(</span>R1<span class="op">,</span>R1<span class="op">)</span> <span class="op">&lt;-</span> getReg<span class="op">(</span>t4 <span class="op">:=</span> t3 <span class="op">*</span> WWE<span class="op">)</span></span></code></pre></div>
+<p>Emitimos el codigo:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>MUL R1<span class="op">,</span> R1<span class="op">,</span> WWE</span></code></pre></div>
+<p>Y actualizamos los descriptores:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>R1</th>
+<th>R2</th>
+<th>R3</th>
+<th>t1</th>
+<th>t2</th>
+<th>t3</th>
+<th>t4</th>
+<th>t5</th>
+<th>we</th>
+<th>have</th>
+<th>to</th>
+<th>go</th>
+<th>deep</th>
+<th>er</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>t4</td>
+<td>er</td>
+<td>t2</td>
+<td>t1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>we</td>
+<td>have</td>
+<td>to</td>
+<td>go</td>
+<td>deep</td>
+<td>er</td>
+</tr>
+</tbody>
+</table>
+<p>Para la instruccion: <code>t5 := to[t4]</code>:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">t4 esta en R1, asi que lo reutilizamos</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">er esta en memoria, asi que podemos librerar R2</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="op">(</span>R2<span class="op">,</span>R1<span class="op">)</span> <span class="op">&lt;-</span> getReg<span class="op">(</span>t5 <span class="op">:=</span> to <span class="op">=[]</span> t4<span class="op">)</span></span></code></pre></div>
+<p>Emitimos el codigo:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>LD R2<span class="op">,</span> to<span class="op">(</span>R1<span class="op">)</span></span></code></pre></div>
+<p>Y actualizamos los descriptores:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>R1</th>
+<th>R2</th>
+<th>R3</th>
+<th>t1</th>
+<th>t2</th>
+<th>t3</th>
+<th>t4</th>
+<th>t5</th>
+<th>we</th>
+<th>have</th>
+<th>to</th>
+<th>go</th>
+<th>deep</th>
+<th>er</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>t4</td>
+<td>t5</td>
+<td>t2</td>
+<td>t1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>we</td>
+<td>have</td>
+<td>to</td>
+<td>go</td>
+<td>deep</td>
+<td>er</td>
+</tr>
+</tbody>
+</table>
+<p>Para la instruccion: <code>we[have] := t5</code>:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">No tenemos informacion de ultimo uso para ningun temporal, asi que arbitrariamente</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="pp"># </span><span class="er">escogemos entre los registros R1 y R3  para asignar a `have`</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="op">(</span>R1<span class="op">,</span>R2<span class="op">)</span> <span class="op">&lt;-</span> getReg<span class="op">(</span>we <span class="op">:=</span> have <span class="op">[]=</span> t5<span class="op">)</span></span></code></pre></div>
+<p>Emitimos el codigo:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>LD R1<span class="op">,</span> have</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>ST R2<span class="op">,</span> we<span class="op">(</span>R1<span class="op">)</span></span></code></pre></div>
+<p>Y actualizamos los descriptores:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>R1</th>
+<th>R2</th>
+<th>R3</th>
+<th>t1</th>
+<th>t2</th>
+<th>t3</th>
+<th>t4</th>
+<th>t5</th>
+<th>we</th>
+<th>have</th>
+<th>to</th>
+<th>go</th>
+<th>deep</th>
+<th>er</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>have</td>
+<td>t1</td>
+<td>t2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>we</td>
+<td>have</td>
+<td>to</td>
+<td>go</td>
+<td>deep</td>
+<td>er</td>
+</tr>
+</tbody>
+</table>
+<p>Siendo asi el codigo final generado:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>LD R2<span class="op">,</span> deep</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>MUL R1<span class="op">,</span> R2<span class="op">,</span> WI</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>LD R3<span class="op">,</span> go<span class="op">(</span>R1<span class="op">)</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>LD R2<span class="op">,</span> er</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>ADD R1<span class="op">,</span> R3<span class="op">,</span> R2</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>MUL R1<span class="op">,</span> R1<span class="op">,</span> WWE</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>LD R2<span class="op">,</span> to<span class="op">(</span>R1<span class="op">)</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>LD R1<span class="op">,</span> have</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>ST R2<span class="op">,</span> we<span class="op">(</span>R1<span class="op">)</span></span></code></pre></div>
+<h2 id="pregunta-4">Pregunta 4</h2>
+<h3 id="pregunta-4.a">Pregunta 4.a</h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>collatz<span class="op">(</span>n<span class="op">){</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> steps <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span><span class="op">(</span>n <span class="op">&gt;</span> <span class="dv">1</span><span class="op">){</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>      steps<span class="op">++;</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span><span class="op">(</span>n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">){</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>          n <span class="op">=</span> n <span class="op">/</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>          n <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> n <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> steps<span class="op">;</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="pregunta-4.b">Pregunta 4.b</h3>
+<p>El TAC del programa es:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bn">00</span> t0 <span class="op">:=</span> get_param n</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bn">01</span> steps <span class="op">:=</span> <span class="dv">0</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bn">02</span> <span class="cf">if</span> t0 <span class="op">&gt;</span> <span class="dv">1</span> <span class="cf">goto</span> <span class="bn">04</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bn">03</span> <span class="cf">goto</span> <span class="dv">14</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bn">04</span> steps <span class="op">:=</span> steps <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="bn">05</span> t1 <span class="op">:=</span> t0 <span class="op">%</span> <span class="dv">2</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="bn">06</span> <span class="cf">if</span> t1 <span class="op">==</span> <span class="dv">0</span> <span class="cf">goto</span> <span class="dv">0</span><span class="er">8</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="bn">07</span> <span class="cf">goto</span> <span class="dv">10</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span><span class="er">8</span> t0 <span class="op">:=</span> t0 <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span><span class="er">9</span> <span class="cf">goto</span> <span class="bn">02</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> t2 <span class="op">:=</span> <span class="dv">3</span> <span class="op">*</span> n</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span> t3 <span class="op">:=</span> t2 <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> t0 <span class="op">:=</span> t3</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="dv">13</span> <span class="cf">goto</span> <span class="bn">02</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="dv">14</span> <span class="cf">return</span> steps</span></code></pre></div>
+<h3 id="pregunta-4.c">Pregunta 4.c</h3>
+<figure>
+<img src="./pics/image.svg" alt="Flow Graph" />
+<figcaption aria-hidden="true">Flow Graph</figcaption>
+</figure>
